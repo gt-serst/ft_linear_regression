@@ -1,3 +1,5 @@
+from etl import load_data
+
 if __name__ == "__main__":
 
-	print("Hello World!")
+	load_data()
