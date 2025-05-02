@@ -20,9 +20,10 @@ if __name__ == "__main__":
 		splitted_line = line.split(',')
 		theta_0 = float(splitted_line[0])
 		theta_1 = float(splitted_line[1])
-		mileage = input("Enter mileage :")
+		mileage = input("Enter mileage : ")
 		mileage_scaled = (float(mileage) - mileage_mean) / mileage_stdev
 		estimated_price = theta_0 + theta_1 * mileage_scaled
+		print(f"Estimated price : {estimated_price}")
 	except FileNotFoundError as e:
 		print("Wrong file or file path:", e)
 	except statistics.StatisticsError as e:
