@@ -4,5 +4,4 @@ def predict_prices(thetas_array, cleaned_data):
 	estimated_price = []
 	for elem in cleaned_data:
 		estimated_price.append(thetas_array[0] + thetas_array[1] * elem[0])
-	print(estimated_price)
 	return estimated_price

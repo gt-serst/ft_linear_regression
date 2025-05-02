@@ -11,10 +11,8 @@ def extract_data():
 			for i, line in enumerate(f):
 				if i == 0:
 					continue
-				print(line.strip())
 				numbers_array = transform_data(line)
 				# Put array with two numbers from the line into a list
-				print(numbers_array)
 				mileage_data.append(numbers_array[0])
 				price_data.append(numbers_array[1])
 		cleaned_data = scale_data(mileage_data, price_data, cleaned_data)

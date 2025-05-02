@@ -7,7 +7,7 @@ def plot_data(cleaned_data, estimated_price):
 	ypoints = get_separate_feature_array(cleaned_data, 1)
 	plt.figure(figsize=(12, 8))
 	plt.scatter(xpoints, ypoints, label="Actual Data")
-	print(estimated_price)
+	(estimated_price)
 	plt.plot(xpoints, estimated_price, color='red', label="Regression Line")
 	plt.title("Car Price by Mileage")
 	plt.xlabel("Mileage")

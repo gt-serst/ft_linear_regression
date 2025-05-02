@@ -11,21 +11,14 @@ def calculate_thetas_gradient(alpha, thetas_array, estimated_price, cleaned_data
 		error = price - y
 		gradient_theta_0 += error
 		gradient_theta_1 += error * x
-	# print(f"gradient theta 0:{gradient_theta_0}")
-	# print(f"gradient theta 1:{gradient_theta_1}")
 	epsilon = 1e-6
 	if abs(gradient_theta_0 / len(cleaned_data)) < epsilon and abs(gradient_theta_1 / len(cleaned_data)) < epsilon:
 		calculate_model_precision(cleaned_data, estimated_price)
 		plot_data(cleaned_data, estimated_price)
-		print("Thetas array:")
-		print(thetas_array)
 		return thetas_array
 	else:
 		thetas_array = update_thetas(thetas_array, gradient_theta_0 / len(cleaned_data), gradient_theta_1 / len(cleaned_data) , alpha)
 		estimated_price = predict_prices(thetas_array, cleaned_data)
-		# print(thetas_array[0])
-		# print(thetas_array[1])
-		# print(estimated_price)
 		# Repeat gradient calculation with new estimated_price and thetas update until the loss function converges
 	return calculate_thetas_gradient(alpha, thetas_array, estimated_price, cleaned_data)
 
