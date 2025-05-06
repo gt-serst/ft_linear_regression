@@ -1,5 +1,4 @@
-from predict import predict_price
-# from model_precision import calculate_model_precision
+from utils import predict_price
 from plot import plot_data
 
 def calculate_thetas_gradient(alpha, thetas_array, estimated_price, scaled_data, cleaned_data):
@@ -17,9 +16,7 @@ def calculate_thetas_gradient(alpha, thetas_array, estimated_price, scaled_data,
 	if abs(gradient_theta_0 / len(scaled_data)) < epsilon and abs(gradient_theta_1 / len(scaled_data)) < epsilon:
 		# print(f"Last theta 0 computed : {thetas_array[0]}")
 		# print(f"Last theta 1 computed : {thetas_array[1]}")
-		# calculate_model_precision(scaled_data, estimated_price)
 		thetas_array = unscale_thetas(thetas_array, cleaned_data)
-		print(thetas_array)
 		estimated_price = predict_price(thetas_array, cleaned_data)
 		plot_data(cleaned_data, estimated_price)
 		return thetas_array
@@ -47,15 +44,12 @@ def unscale_thetas(thetas_array, cleaned_data):
 	for elem in cleaned_data:
 		mileage_mean += elem[0]
 	mileage_mean /= len(cleaned_data)
-	print(f"mileage_mean: {mileage_mean}")
 	for elem in cleaned_data:
 		mileage_stdev += (elem[0] - mileage_mean) ** 2
 	mileage_stdev = (mileage_stdev / len(cleaned_data)) ** 0.5
-	print(f"mileage_stdev: {mileage_stdev}")
 	# To found these formulas substitute the scaled x by the formulas used to scale it in the linear regression equation
 	thetas_array[1] = thetas_array[1] / mileage_stdev
 	thetas_array[0] = thetas_array[0] - (thetas_array[1] * mileage_mean)
-	print(f"thetas_array[0]: {thetas_array[0]}")
-	print(f"thetas_array[1]: {thetas_array[1]}")
+	
 	return thetas_array
 

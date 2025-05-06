@@ -1,7 +1,6 @@
 from utils import read_data
-from predict import predict_price
+from utils import predict_price
 from model import calculate_thetas_gradient
-# import statistics
 
 def scale_data(cleaned_data):
 
@@ -25,8 +24,6 @@ if __name__ == "__main__":
 	try:
 		cleaned_data = read_data()
 		scaled_data = scale_data(cleaned_data)
-		print(scaled_data)
-		# print(cleaned_data)
 		thetas_array = [0, 0]
 		alpha = 1
 		gradient_theta_0 = 0
