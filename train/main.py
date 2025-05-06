@@ -8,7 +8,7 @@ if __name__ == "__main__":
 	try:
 		cleaned_data = extract_data()
 		thetas_array = [0, 0]
-		alpha = 0.05
+		alpha = 1
 		gradient_theta_0 = 0
 		gradient_theta_1 = 0
 		estimated_price = predict_prices(thetas_array, cleaned_data)

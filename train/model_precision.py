@@ -6,5 +6,6 @@ def calculate_model_precision(cleaned_data, estimated_price):
 		error = abs(price - y)
 		mean_absolute_error += error
 	mean_absolute_error = mean_absolute_error / len(cleaned_data)
+	# print(f"Mean Absolute Error : {mean_absolute_error}")
 
 	return mean_absolute_error
