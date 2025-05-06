@@ -7,6 +7,8 @@ if __name__ == "__main__":
 		theta_0 = float(splitted_line[0])
 		theta_1 = float(splitted_line[1])
 		mileage = input("Enter mileage : ")
+		if (float(mileage) < 0):
+			raise ValueError(f"Negative number not allowed.")
 		estimated_price = theta_0 + theta_1 * float(mileage)
 		print(f"Estimated price : {estimated_price}")
 	except FileNotFoundError as e:

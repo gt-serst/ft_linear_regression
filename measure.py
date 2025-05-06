@@ -1,7 +1,7 @@
 from utils import read_data
 from utils import predict_price
 
-def calculate_model_precision(cleaned_data, estimated_price):
+def measure_model_precision(cleaned_data, estimated_price):
 
 	mean_absolute_error = 0
 	# Calculate the error size between actual price and estimated price
@@ -23,7 +23,7 @@ if __name__ == "__main__":
 		thetas_array.append(float(splitted_line[0]))
 		thetas_array.append(float(splitted_line[1]))
 		estimated_price = predict_price(thetas_array, cleaned_data)
-		mean_absolute_error = calculate_model_precision(cleaned_data, estimated_price)
+		mean_absolute_error = measure_model_precision(cleaned_data, estimated_price)
 		print(f"Mean Absolute Error : {mean_absolute_error}")
 	except FileNotFoundError as e:
 		print("Wrong file or file path:", e)
