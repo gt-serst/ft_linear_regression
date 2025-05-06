@@ -12,6 +12,10 @@ if __name__ == "__main__":
 				for i in range(len(splitted_line)):
 					item = splitted_line[i].strip('\n')
 					splitted_line[i] = float(item)
+					if (i > 1):
+						raise ValueError(f"Line has {i + 1} columns; expected 2.")
+					if (splitted_line[i] < 0):
+						raise ValueError(f"Negative number not allowed.")
 				mileage_data.append(splitted_line[0])
 			mileage_mean = statistics.mean(mileage_data)
 			mileage_stdev = statistics.stdev(mileage_data)

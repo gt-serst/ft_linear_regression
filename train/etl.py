@@ -26,6 +26,8 @@ def transform_data(line):
 		splitted_line[i] = float(item)
 		if (i > 1):
 			raise ValueError(f"Line has {i + 1} columns; expected 2.")
+		if (splitted_line[i] < 0):
+			raise ValueError(f"Negative number not allowed.")
 	return splitted_line
 
 def scale_data(mileage_data, price_data):
