@@ -1,4 +1,4 @@
-def predict_prices(thetas_array, cleaned_data):
+def predict_price(thetas_array, cleaned_data):
 
 	# Estimate price for every points according to the given theta_0 and theta_1
 	estimated_price = []
