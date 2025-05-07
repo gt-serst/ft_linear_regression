@@ -8,7 +8,7 @@ def measure_model_precision(cleaned_data, estimated_price):
 	for (price, (x, y)) in zip(estimated_price, cleaned_data):
 		error = abs(price - y)
 		mean_absolute_error += error
-	mean_absolute_error = mean_absolute_error / len(cleaned_data)
+	mean_absolute_error /= len(cleaned_data)
 
 	return mean_absolute_error
 
@@ -31,5 +31,7 @@ if __name__ == "__main__":
 		print("Value error:", e)
 	except IndexError as e:
 		print("Index error:", e)
+	except ZeroDivisionError as e:
+		print("Zero division error:", e)
 	except Exception as e:
 		print("An unexpected error occurred:", e)

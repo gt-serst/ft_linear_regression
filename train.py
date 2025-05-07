@@ -26,8 +26,6 @@ if __name__ == "__main__":
 		scaled_data = scale_data(cleaned_data)
 		thetas_array = [0, 0]
 		alpha = 1
-		gradient_theta_0 = 0
-		gradient_theta_1 = 0
 		estimated_price = predict_price(thetas_array, scaled_data)
 		thetas_array = calculate_thetas_gradient(alpha, thetas_array, estimated_price, scaled_data, cleaned_data)
 		with open("thetas.csv", "w") as f:
@@ -38,5 +36,7 @@ if __name__ == "__main__":
 		print("Value error:", e)
 	except IndexError as e:
 		print("Index error:", e)
+	except ZeroDivisionError as e:
+		print("Zero division error:", e)
 	except Exception as e:
 		print("An unexpected error occurred:", e)

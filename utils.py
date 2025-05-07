@@ -1,7 +1,7 @@
 def read_data():
 
 	# Read data from the file, read line by line to get the two numbers (price and mileage) and put them individually in integer into an array that will be added to a list
-	with open('perfect_data.csv', 'r') as f:
+	with open('data.csv', 'r') as f:
 		cleaned_data = []
 		for i, line in enumerate(f):
 			if i == 0:
