@@ -13,7 +13,7 @@
 ```math
 \text{tmp}\theta_1 = \text{learningRate} \times \frac{1}{\text{m}} sum_{i = 0}^{m - 1} (\text{estimatePrice(mileage[i] - price[i])} \times \text{mileage[i]})
 ```
-## Gradient descent logic
+## A bit of math and logic
 ### Linear regression
 If we plot all the data on a graph, we can see that there is a linear correlation between the points, which can be represented with a straight line. This is called linear regression — a line that accurately represents the data and can be used to predict future values. The equation of this line is a simple function of degree one.
 This is the formula for a linear regression:
